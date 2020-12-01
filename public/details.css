@@ -1,0 +1,24 @@
+#details .image{
+    width: 100%;
+    height: 300px;
+    background-image: url("/burger.png");
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+}
+
+#details .text-wrapper {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 36px;
+}
+
+#details .text-wrapper p {
+    font-size: 20px;
+    padding-top: 5px;
+    color: #999;
+}
+
+#details .subtitle {
+    display: flex;
+}

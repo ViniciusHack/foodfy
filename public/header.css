@@ -1,0 +1,21 @@
+#header-home {
+    display: flex;
+    padding: 37px 0;
+}
+
+#header-home img {
+    width: 90px;
+    height: 27px;
+}
+
+#header-home nav ul {
+    display: flex;
+}
+
+#header-home nav ul li:nth-of-type(1) {
+    padding-left: 122px;
+}
+
+#header-home nav ul li {
+    padding-left: 30px;
+}
