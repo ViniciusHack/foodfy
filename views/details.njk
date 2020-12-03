@@ -1,64 +1,103 @@
 {%extends "layout.njk"%}
 
 {%block head%}
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/details.css">
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/header.css">
     <title>Detalhes | Foodfy</title>
-{%endblock%}
+    {%endblock%}
 
-{%block header%}
-    <header id="header-home">
+    {%block header%}
+        <header id="header-home">
 
-        <a href="/"><img src="/logo.png" alt="Logo Foodfy"></a>
-        <nav>
-            <ul>
-                <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/receitas"><b>Receitas</b></a></li>
-            </ul>
-        </nav>
+            <a href="/"><img src="/logo.png" alt="Logo Foodfy"></a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="/receitas">
+                            <b>Receitas</b>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-    </header>
-{%endblock%}
+        </header>
+        {%endblock%}
 
-{%block content%}
-    <section id="details">
-        <div class="detail-banner">
-            <div class="image"></div>
-            <div class="text-wrapper">
-                <h1>Triplo bacon burger</h1>
-                <p>por Jorge Relato</p>
-            </div><!--text-wrapper-->
-        </div>
-        <div class="recipe">
-            <div class="ingredients">
-
-                <div class="sub-title">
-                    <h2>Ingredientes</h2>
-                    <span>ESCONDER</span>
+        {%block content%}
+            <section id="details">
+                <div class="detail-banner">
+                    <div class="image">
+                        <img src="{{item.image}}" alt="{{item.alt}}"></div>
+                    <div class="text-wrapper">
+                        <h1>{{item.title}}</h1>
+                        <p>por
+                            {{item.author}}</p>
+                    </div>
+                    <!--text-wrapper-->
                 </div>
-                <div class="text-ingredients">
-                    <ul>
-                        <li>3 kg de carne moída (escolha uma carne magra e macia);</li>
-                        <li>300 g de bacon moído;</li>
-                        <li>1 ovo;</li>
-                        <li>3 colheres (sopa) de farinha de trigo;</li>
-                        <li>3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde processados no liquidificador;</li>
-                        <li>30 ml de água gelada;</li>
-                    </ul>
-                </div>
+                <div class="recipe">
+                    <div class="ingredients">
 
-            </div><!--ingredients-->
-            <div class="how-to-prepare">
+                        <div class="sub-title">
+                            <h2>Ingredientes</h2>
+                            <span class="hide" id="0">ESCONDER</span>
+                        </div>
+                        <div class="text-ingredients div-content">
+                            <nav>
+                                <ul>
+                                    {%for ingredient in item.ingredients%}
+                                        <li>{{ingredient}}</li>
+                                        {%endfor%}
+                                    </ul>
+                                </nav>
+                            </div>
 
-            </div><!--how-to-prepare-->
-            <div class="adtional-info">
-            </div><!--adtional-info-->
-        </div>
-    </section>
-{%endblock%}
+                        </div>
+                        <!--ingredients-->
+                        <div class="how-to-prepare">
+                            <div class="sub-title">
+                                <h2>Modo de preparo</h2>
+                                <span class="show" id="1">MOSTRAR</span>
+                            </div>
+                            <div class="text-prepare div-content invisible">
+                                <nav>
+                                    <ul>
+                                        {%for prepare in item.preparation%}
+                                            <li>{{prepare}}</li>
+                                            {%endfor%}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!--how-to-prepare-->
+                            <div class="adtional-info">
 
-{%block footer%}
-{%endblock%}
+                                <div class="sub-title">
+                                    <h2>Informações adicionais</h2>
+                                    <span class="hide" id="2">ESCONDER</span>
+                                </div>
+
+                                <div class="text-info div-content">
+                                    {%for info in item.information%}
+                                        <p>{{info}}</p>
+                                        {%endfor%}
+                                    </div>
+                                </div>
+                                <!--adtional-info-->
+                            </div>
+                        </section>
+                        {%endblock%}
+
+                        {%block footer%}
+                            <footer>
+                                <div class="box-footer">
+                                    <span>Todos direitos reservados, receitas Foodfy.</span>
+                                </div>
+                            </footer>
+                            {%endblock%}

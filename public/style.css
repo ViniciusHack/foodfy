@@ -1,82 +1,82 @@
-main,header {
-    width: 100%;
-    max-width: 940px;
-    margin: 0 auto;
+main,
+header {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 body {
-    max-width: initial !important;
-    margin: 0;
+  max-width: initial !important;
+  margin: 0;
 }
 
 .banner {
-    background-color: #FBDFDB;
-    border-radius: 30px;
+  background-color: #fbdfdb;
+  border-radius: 30px;
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .banner .image {
-    padding-top: 66px;
-    margin-right: 100px;
+  padding-top: 66px;
+  margin-right: 100px;
 }
 
 .banner .text {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 316px;
-    margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 316px;
+  margin-left: 60px;
 }
 
-
-
 .banner .text h2 {
-    font-size: 32px;
-    font-weight: 700;
-    padding-bottom: 10px;
-    color: #111;
+  font-size: 32px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: #111;
 }
 
 .banner .text p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .featured-recipes h1 {
-    margin: 50px 0 20px 0;
+  margin: 50px 0 20px 0;
 }
 
 .featured-recipes .grid-recipes {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  cursor: pointer;
 }
 
 .featured-recipes .recipe img {
-    width: 100%;
-    border-radius: 15px;
-    height: 140px;
+  width: 100%;
+  border-radius: 15px;
+  height: 140px;
 }
 
 .featured-recipes .recipe h4 {
-    font-weight: 400;
-    font-size: 18px;
+  font-weight: 400;
+  font-size: 18px;
 
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .featured-recipes .recipe p {
-    font-size: 14px;
-    color: #777;
+  font-size: 14px;
+  color: #777;
 }
 
 footer {
-    margin: 73px 0 23px 0;
-    text-align: center;
+  margin: 73px 0 23px 0;
+  text-align: center;
 }
 
 footer span {
-    color: #999;
+  color: #999;
+  font-size: 14px;
 }

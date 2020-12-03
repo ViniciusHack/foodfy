@@ -1,0 +1,40 @@
+{% extends "layout.njk"%}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/details.css">
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/header.css">
+  <title>Detalhes | Foodfy</title>
+{% endblock %}
+
+{%block header%}
+  <header id="header-home">
+
+    <a href="/"><img src="/logo.png" alt="Logo Foodfy"></a>
+    <nav>
+      <ul>
+        <li>
+          <a href="/sobre">Sobre</a>
+        </li>
+        <li>
+          <a href="/receitas">
+            <b>Receitas</b>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+  {%endblock%}
+
+  {% block content %}
+
+    <div class="div-not-found">
+
+      <h2>PÁGINA NÃO ENCONTRADA</h2>
+      <p>A PÁGINA NO QUAL VOCÊ ESTÁ PROCURANDO NÃO FOI ENCONTRADA (ERROR 404)</p>
+    </div>
+
+  {% endblock %}

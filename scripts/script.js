@@ -1,28 +1,29 @@
-const modalOverlay = document.querySelector(".modal-overlay");
-const modal = document.querySelector(".modal");
-const recipes = document.querySelectorAll(".recipe");
-const footer = document.querySelector('.footer');
-const image = modal.querySelector('.img');
+const recipe = document.querySelector(".recipe");
+const btns = recipe.querySelectorAll("span");
+const divRecipes = recipe.children;
+const contentDivs = recipe.querySelectorAll(".div-content");
+const detailBanner = document.querySelector(".detail-banner");
+const img = detailBanner.querySelector("img");
+const divImage = detailBanner.querySelector(".image");
 
-for (let recipe of recipes) {
-    const source = recipe.getAttribute("id");
-    const text = recipe.getAttribute("title")
-    const author = recipe.getAttribute("author")
+const imgSrc = img.getAttribute("src");
+console.log(divImage);
+divImage.style.backgroundImage = `url(${imgSrc})`;
 
-    recipe.addEventListener('click', function() {
-        modalOverlay.classList.add("active");
-        image.style.backgroundImage = `url('../images/${source}.png')`;
-        modal.querySelector("h4").innerText = text
-        modal.querySelector("p").innerText = author
+for (let button of btns) {
+  button.addEventListener("click", () => {
+    if (button.textContent == "ESCONDER") {
+      contentDivs[button.id].classList.remove("visible");
+      contentDivs[button.id].classList.add("invisible");
+      divRecipes[button.id].style.paddingBottom = "47px";
 
-    })
-
-}
-
-modal.querySelector('span').addEventListener('click', function() {
-    modalOverlay.classList.remove("active");
-})
-
-if (recipes.length < 10) {
-    footer.classList.add("absolute");
+      return (button.innerText = "MOSTRAR");
+    }
+    if (button.textContent == "MOSTRAR") {
+      contentDivs[button.id].classList.remove("invisible");
+      contentDivs[button.id].classList.add("visible");
+      divRecipes[button.id].style.paddingBottom = "0";
+      return (button.innerText = "ESCONDER");
+    }
+  });
 }

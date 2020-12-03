@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/recipes.css">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="/header.css">
-    <title>Foodfy</title>
-</head>
-<body>
-    <main>
-        <header id="header-home">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/recipes.css">
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/header.css">
+        <title>Foodfy</title>
+    </head>
+    <body>
+        <main>
+            <header id="header-home">
 
-            <a href="/"><img src="/logo.png" alt="Logo Foodfy"></a>
-            <nav>
-                <ul>
-                    <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/receitas"><b>Receitas</b></a></li>
-                </ul>
-            </nav>
+                <a href="/"><img src="/logo.png" alt="Logo Foodfy"></a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/sobre">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="/receitas">
+                                <b>Receitas</b>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-        </header>
+            </header>
 
-        <div class="grid-recipes">
+            <div class="grid-recipes">
 
-            {%for item in items%}
+                {%for item in items%}
 
-                <a href="/detalhes"><div class="recipe" id="{{item.id}}">
-                    <img src="{{item.image}}" alt="{{item.alt}}" />
-                    <h4>{{item.title}}</h4>
-                    <p>por {{item.author}}</p>
-                </div></a>
+                    <a href="/detalhes/{{item.id}}">
+                        <div class="recipe" id="{{item.id}}">
+                            <img src="{{item.image}}" alt="{{item.alt}}"/>
+                            <h4>{{item.title}}</h4>
+                            <p>por
+                                {{item.author}}</p>
+                        </div>
+                    </a>
 
-            {%endfor%}
+                    {%endfor%}
 
+                </div>
+                <!--grid-recipes-->
+            </main>
 
-        </div><!--grid-recipes-->
-    </main>
+            <div class="modal-overlay">
+                <div class="modal">
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <h4>Asinhas de frango ao barbecue</h4>
+                    <p>por Vania Steroski</p>
+                    <span>Fechar modal</span>
+                </div>
+                <!--modal-->
+            </div>
+            <!--modal-overlay-->
 
-        <div class="modal-overlay">
-            <div class="modal">
-                <div><div class="img"></div></div>
-                <h4>Asinhas de frango ao barbecue</h4>
-                <p>por Vania Steroski</p>
-                <span>Fechar modal</span>
-            </div><!--modal-->
-        </div><!--modal-overlay-->
+            <footer class="footer">
+                <span>Todos direitos reservados, receitas Foodfy.</span>
+            </footer>
 
-
-    <footer class="footer">
-        <span>Todos direitos reservados, receitas Foodfy.</span>
-    </footer>
-
-    <script src="scripts/script.js" defer></script>
-</body>
-</html>
+            <script src="scripts/script.js" defer="defer"></script>
+        </body>
+    </html>
