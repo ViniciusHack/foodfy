@@ -28,15 +28,13 @@ server.get("/receitas", function (req, res) {
   return res.render("recipes", { items: recipes });
 });
 
-server.get("/detalhes/:index", (req, res) => {
+server.get("/recipes/:index", function (req, res) {
   const recipeIndex = req.params.index;
-
-  if (!recipes[recipeIndex]) {
-    return res.send("Receita não encontrada");
+  const recipe = recipes.find((recipe) => String(recipe.id) === recipeIndex);
+  if (!recipe) {
+    return res.send("Recipe not found!");
   }
-
-  return res.render("details", { item: recipes[recipeIndex] });
-});
+  return res.render("recipe", { item: recipe });
 
 server.use((req, res) => {
   return res.status(404).render("not-found");
