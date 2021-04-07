@@ -1,0 +1,36 @@
+{% extends "layout.njk"%}
+{% block head %}
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/header.css">
+    <link rel="stylesheet" href="/admin/edit.css">
+    <link rel="stylesheet" href="/admin/main.css">
+    <script src="/add.js" defer></script>
+    <title>Foodfy</title>
+{%endblock%}
+{% block header %}
+    <header>
+      <div>
+        <a id="header-home" href="/admin/recipes"><img src="/logo2.png" alt="Logo FoodFy"/></a>
+      </div>
+    </header>
+{% endblock %}
+{% block content %}
+  <main class="content">
+    <form action="/admin/recipes?_method=PUT" method="post">
+      <div class="top">
+        <h2>Editando receita</h2>
+        <div class="delete-save-buttons">
+          <button form="form-delete"type="submit">Deletar</button>
+          <button type="submit" class="button-purple">Salvar receita</button>
+        </div>
+      </div><!--top-->
+      {% include "admin/fields.njk"%}
+      <input type="number" name="hidden" value="{{recipe.id}}" style="display: none">
+    </form>
+    <form id="form-delete"action="admin/recipes?_method=DELETE" method="post">
+      <input type="number" name="hidden" value="{{recipe.id}}" style="display: none">
+    </form>
+  </main>
+{% endblock %}
+

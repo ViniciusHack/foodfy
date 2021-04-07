@@ -1,0 +1,68 @@
+{% extends 'layout.njk'%}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/header.css">
+    <link rel="stylesheet" href="/admin/details.css">
+    <link rel="stylesheet" href="/admin/main.css">
+    <title>Foodfy</title>
+{% endblock %}
+{% block header %}
+<header>
+      <div>
+        <a id="header-home" href="/admin/recipes"><img src="/logo2.png" alt="Logo FoodFy"/></a>
+      </div>
+</header>
+{% endblock %}
+{% block content%}
+<main class="content">
+    <section id="details">
+        <div class="top">
+            <h2>{{recipe.title}}</h2> {# Ainda não possui title#}
+            <a href="#" class="button-purple">Editar receita</a>
+        </div>
+        <div class="detail-banner">
+            <div class="image">
+                <img src="/burger.png" alt="Burger"></div>
+            <div class="text-wrapper">
+                <h1>{{recipe.title}}</h1> {# Ainda não possui title#}
+                <p>{{recipe.author}}</p> {# Ainda não possui author#}
+            </div><!--text-wrapper-->
+        </div>
+        <div class="recipe">
+            <div class="ingredients">
+                <div class="sub-title">
+                    <h2>Ingredientes</h2>
+                </div>
+                <div class="text-ingredients div-content">
+                    <nav>
+                        <ul>
+                            <li>-  {{recipe.ingredients}}</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div><!--ingredients-->
+            <div class="how-to-prepare">
+                <div class="sub-title">
+                    <h2>Modo de preparo</h2>
+                </div>
+                <div class="text-prepare">
+                    <nav>
+                        <ul>
+                            <li>- {{recipe.how_to_prepare}}</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div><!--how-to-prepare-->
+            <div class="adtional-info">
+                <div class="sub-title">
+                    <h2>Informações adicionais</h2>
+                </div>
+                <div class="text-info div-content">                
+                    <p>{{recipe.info}}</p>
+                </div>
+            </div><!--adtional-info-->
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,24 @@
+<section class="form">      
+    <div class="field">
+      <h4>Imagem da receita</h4>
+      <input type="url" name="recipe_url" value="{{recipe.recipe_url}}" required></input>
+    </div>
+    <div class="field">
+      <h4>Ingredientes</h4>
+      <div class="field-ingredients">
+        <input type="text" name="ingredients[]" value="{{recipe.ingredients}}" required> </input>
+      </div>
+        <span id="add_ingredient">Adicionar novo ingrediente</span>
+    </div>
+    <div class="field">
+      <h4>Modo de preparo</h4>
+      <div class="field-steps">
+        <input type="text" name="how_to_prepare[]" value="{{recipe.how_to_prepare}}" required></input>
+      </div>
+      <span id="add_step">Adicionar novo passo</span>
+    </div>
+    <div class="field">
+      <h4>Informações adicionais</h4>
+      <textarea name="info" rows="8" cols="50" spellcheck="true" value="{{recipe.info}}"></textarea>
+  </div>
+</section>

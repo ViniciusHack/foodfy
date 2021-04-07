@@ -1,0 +1,82 @@
+{% extends "layout.njk"%}
+{% block head %}
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/header.css">
+    <link rel="stylesheet" href="/admin/style.css">
+    <title>Foodfy</title>
+{%endblock%}
+{% block header %}
+    <header>
+      <div>
+        <a id="header-home" href="/admin/recipes"><img src="/logo2.png" alt="Logo FoodFy"/></a>
+      </div>
+    </header>
+{%endblock%}
+{% block content %}
+  <main class="content">
+    <h2>Gerenciar Receitas</h2>
+    <section class="grid">
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/burger.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Triplo Bacon Burger</p>
+          <p>por Jorge Relato</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/lasanha.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Lasanha mac n´cheese</p>
+          <p>por Juliano Vieira</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/asinhas.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Asinhas de frago ao barbecue</p>
+          <p>por Vania Steroski</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/pizza.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Pizza 4 estações</p>
+          <p>por Fabiana Melo</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/espaguete.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Espaguete ao alho</p>
+          <p>por Jorge Relato</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+      <div class="card-recipe">
+        <div class="container-img">
+          <img src="/doce.png"></img>
+        </div><!--container-img-->
+        <div class="content-card">
+          <p class="recipe-name">Docinhos pão-do-céu</p>
+          <p>por Jorge Relato</p>
+          <a href="#">Visualizar</a>
+        </div><!--content-card-->
+      </div><!--card-recipe-->
+    </section>
+  </main>
+{%endblock%}
