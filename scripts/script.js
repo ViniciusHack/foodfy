@@ -1,5 +1,5 @@
 const recipe = document.querySelector(".recipe");
-const btns = recipe.querySelectorAll("span");
+const btns = recipe?.querySelectorAll("span");
 const divRecipes = recipe.children;
 const contentDivs = recipe.querySelectorAll(".div-content");
 const detailBanner = document.querySelector(".detail-banner");
